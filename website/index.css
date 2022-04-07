@@ -1,0 +1,67 @@
+/* ----------- */
+/* Reset       */
+/* ----------- */
+
+/* 一个通用的 Reset CSS的css文件 */
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing */
+/* 选择所有的元素，并且设置的边框和内边距的值是包含在width内 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset Margines */
+/* 把外边距设置为0，为了兼容不同的浏览器，因为不同的浏览器默认的外边距和内边距不同*/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture{
+    margin: 0;
+}
+
+/* set up the Body */
+body{
+    line-height: 1.5;  /* 设置Body 中元素高度为1.5*/
+    min-height: 100vh; /* 设置Body的最小高度*/
+}
+
+/* make images easer to work with */
+img,
+picture{
+    max-width: 100%; /*图片的最大宽度*/
+    display: block;
+}
+
+/* make form elements easire to work with */
+input,
+button,
+textarea,
+select{
+    font: inherit /* 保证以上按钮的字体从父元素继承，一致 */
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) { /* 检查用户是否开启减少动态效果 解释参考 https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-reduced-motion*/
+    /* html:focus-within 伪类选择器, 表示当一个元素或该元素后代获得焦点时触发 参考 https://www.cnblogs.com/coco1s/p/9406413.html */
+    /* 设置页面的滚动效果 */
+    html:focus-within {
+     scroll-behavior: auto; /* 立即跳转到锚点 参考 https://developer.mozilla.org/zh-CN/docs/Web/CSS/scroll-behavior*/
+    }
+    
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
