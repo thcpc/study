@@ -30,7 +30,8 @@ picture{
 /* set up the Body */
 body{
     line-height: 1.5;  /* 设置Body 中元素高度为1.5*/
-    min-height: 100vh; /* 设置Body的最小高度*/
+    min-height: 100vh; /* 设置Body 中元素的最小高度*/
+                       /* vh https://blog.csdn.net/bidang3275/article/details/118657801 */
 }
 
 /* make images easer to work with */
@@ -59,9 +60,53 @@ select{
     *,
     *::before,
     *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important; /* 完成动画的周期设置为0.01 ms */
+      animation-iteration-count: 1 !important; /* 动画播放次数 */
+      transition-duration: 0.01ms !important; /* 完成动画过渡的时间0.01 ms */
+      scroll-behavior: auto !important; /* 设置页面的滚动效果 */
+      /* !important 设置此，此设置将覆盖其它css */
     }
   }
+
+
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+
+.flex {
+    display: flex; /* 详解 https://www.cnblogs.com/hellocd/p/10443237.html */
+    gap: var(--gap,1rem); /* var 变量 https://www.jianshu.com/p/8e286c0f9918 */
+                          /* rem 解释 https://m.php.cn/article/467859.html */
+}
+.grid{
+    display: grid; /* 详解 https://www.jianshu.com/p/41c038baf994 */
+    gap: var(--gap,1rem);
+}
+
+.container {
+    padding-inline: 2rem; /* https://cloud.tencent.com/developer/section/1072175 */
+    max-width: 80rem;
+    margin-inline: auto; /* 类似 padding */
+}
+
+/* .sr-only 作用 https://blog.csdn.net/sinat_34719507/article/details/53737075  */
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden; /* https://blog.csdn.net/javaloveiphone/article/details/50907308 */
+    clip: rect(0,0,0,0); /* 用于隐藏label标签 https://www.cnblogs.com/foxcharon/p/10134122.html */
+    white-space: nowrap; /* https://blog.csdn.net/weixin_39818813/article/details/79942501 */
+    border: 0;
+
+}
+
+
+.box{
+    background-color: lightblue;
+    padding: 3rem
+}
+
+
