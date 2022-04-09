@@ -109,4 +109,9 @@ select{
     padding: 3rem
 }
 
-
+.call-to-action{
+    --gap: 5rem;
+    background-color: pink;
+    padding: 2rem;
+    border-radius: 1rem;
+}
